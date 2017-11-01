@@ -1,5 +1,13 @@
 # Hello Auth
 
+| Endpoint       | Method
+|----------------|-------
+| `/`            | GET
+| `/api`         | GET
+| `/api/users`   | GET
+| `/api/secrets` | GET
+| `/api/login`   | POST
+
 --------------------------------------------------------------------------------
 
 ## Requirements

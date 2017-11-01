@@ -9,6 +9,7 @@ const bodyParser = require("body-parser")
 
 const index = require("./routes/index")
 const users = require("./routes/users")
+const secrets = require("./routes/secrets")
 
 // -----------------------------------------------------------------------------
 
@@ -33,7 +34,8 @@ app.use(express.static(path.join(__dirname, "public")))
 // -----------------------------------------------------------------------------
 
 app.use("/", index)
-app.use("/users", users)
+app.use("/api/users", users)
+app.use("/api/secrets", secrets)
 
 // -----------------------------------------------------------------------------
 
