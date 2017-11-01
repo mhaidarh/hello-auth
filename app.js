@@ -8,6 +8,7 @@ const bodyParser = require("body-parser")
 // -----------------------------------------------------------------------------
 
 const index = require("./routes")
+const auth = require("./routes/auth")
 const api = require("./routes/api")
 const users = require("./routes/api/users")
 const secrets = require("./routes/api/secrets")
@@ -15,13 +16,6 @@ const secrets = require("./routes/api/secrets")
 // -----------------------------------------------------------------------------
 
 const app = express()
-
-// -----------------------------------------------------------------------------
-
-app.use("/", index)
-app.use("/api", api)
-app.use("/api/users", users)
-app.use("/api/secrets", secrets)
 
 // -----------------------------------------------------------------------------
 
@@ -38,6 +32,14 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
+
+// -----------------------------------------------------------------------------
+
+app.use("/", index)
+app.use("/auth", auth)
+app.use("/api", api)
+app.use("/api/users", users)
+app.use("/api/secrets", secrets)
 
 // -----------------------------------------------------------------------------
 
