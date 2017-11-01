@@ -9,16 +9,16 @@ router.get("/", (req, res, next) => {
   })
 })
 
-router.post("/login", controller.checkBody, (req, res) => {
+router.post("/login", controller.checkUser, (req, res) => {
   res.send({
     username: req.body.username,
+    token: req.token,
     message: req.message
   })
 })
 
 router.get("/check", controller.checkToken, (req, res) => {
   res.send({
-    token: req.headers.authorization,
     message: req.message
   })
 })
