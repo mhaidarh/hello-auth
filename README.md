@@ -1,12 +1,20 @@
 # Hello Auth
 
-| Endpoint       | Method
-|----------------|-------
-| `/`            | GET
-| `/api`         | GET
-| `/api/users`   | GET
-| `/api/secrets` | GET
-| `/api/login`   | POST
+## API
+
+| Endpoint       | Method | Description
+|----------------|--------|------------
+| `/`            | GET    | Hello Root
+| `/api`         | GET    | Hello API
+| `/api/users`   | GET    | Respond with list of users
+| `/api/secrets` | GET    | Respond with list of secrets
+
+## Auth
+
+| Endpoint       | Method | Description
+|----------------|--------|------------
+| `/auth/login`  | POST   | Get credentials from body, then respond with token if credential is match
+| `/auth/check`  | GET    | Check token from header, then respond if the token is valid
 
 --------------------------------------------------------------------------------
 
