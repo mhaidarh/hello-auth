@@ -1,11 +1,10 @@
-var express = require("express")
-var router = express.Router()
+const express = require("express")
+const router = express.Router()
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send({
-    message: "List of secrets"
-  })
+const DATA = require("../data/secrets.json")
+
+router.get("/", (req, res, next) => {
+  res.send(DATA)
 })
 
 module.exports = router
